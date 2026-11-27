@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Snack bouquets | Glorious Gifts</title>
+<meta name="description" content="Chips, chocolates, candy and a little teddy in one big surprise.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Glorious Gifts">
+<meta property="og:title" content="Snack bouquets | Glorious Gifts">
+<meta property="og:description" content="Chips, chocolates, candy and a little teddy in one big surprise.">
+<meta property="og:url" content="https://webytics.github.io/glorious/bouquet/snack.html">
+<meta property="og:image" content="https://webytics.github.io/glorious/images/t3.jpg">
+<meta property="og:image:width" content="568"><meta property="og:image:height" content="700">
+<meta name="twitter:card" content="summary_large_image">
+<style>body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#FBF6FF;color:#2B1740;display:grid;place-items:center;min-height:100vh;padding:20px;box-sizing:border-box}
+.c{max-width:460px;width:100%;background:#fff;border-radius:20px;padding:14px 14px 24px;box-shadow:0 20px 50px -20px rgba(76,29,120,.4);text-align:center}
+img{width:100%;height:auto;border-radius:14px;display:block}h1{font-size:24px;margin:18px 10px 8px}p{margin:0 14px 20px;color:#5a4a6b;line-height:1.5}
+a.b{display:inline-block;background:#25D366;color:#fff;text-decoration:none;font-weight:600;padding:13px 26px;border-radius:999px;cursor:pointer}a.s{display:block;margin-top:16px;color:#7C3AED;font-size:14px}
+#t{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);max-width:90%;background:#2B1740;color:#fff;padding:12px 18px;border-radius:14px;text-align:center;display:none;font-size:14px}</style></head>
+<body><div class="c"><img id="ph" src="../images/t3.jpg" alt="Snack bouquets"><h1>Snack bouquets</h1><p>Chips, chocolates, candy and a little teddy in one big surprise.</p>
+<a class="b" id="o" href="https://wa.me/923006031314?text=Hi%20Glorious%20Gifts%2C%20I%20want%20info%20about%20the%20Snack%20bouquets.%20Please%20share%20details%20and%20price.%0A%0Ahttps%3A//webytics.github.io/glorious/bouquet/snack.html" target="_blank" rel="noopener">Order on WhatsApp</a><a class="s" href="../">See all bouquets</a></div><div id="t"></div>
+<script>
+(function(){
+var msg="Hi Glorious Gifts, I want info about the Snack bouquets. Please share details and price.",url="https://webytics.github.io/glorious/bouquet/snack.html",o=document.getElementById('o'),ph=document.getElementById('ph'),t=document.getElementById('t');
+var mobile=/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+function toast(x){t.textContent=x;t.style.display='block';setTimeout(function(){t.style.display='none'},9000)}
+function copyImg(){return new Promise(function(res){try{var c=document.createElement('canvas');c.width=ph.naturalWidth;c.height=ph.naturalHeight;c.getContext('2d').drawImage(ph,0,0);c.toBlob(function(b){try{navigator.clipboard.write([new ClipboardItem({'image/png':b})]).then(function(){res(true)},function(){res(false)})}catch(e){res(false)}},'image/png')}catch(e){res(false)}})}
+o.addEventListener('click',function(e){
+ if(mobile&&navigator.canShare&&navigator.share){
+  e.preventDefault();
+  fetch(ph.src).then(function(r){return r.blob()}).then(function(bl){
+   var f=new File([bl],'snack.jpg',{type:bl.type||'image/jpeg'});
+   if(navigator.canShare({files:[f]}))return navigator.share({files:[f],text:msg});
+   location.href=o.href;
+  }).catch(function(err){if(!err||err.name!=='AbortError')location.href=o.href});
+  return;
+ }
+ if(!mobile)copyImg().then(function(s){if(s)toast('Photo copied. In WhatsApp click the message box, press Ctrl+V, then Send.')});
+});
+})();
+</script></body></html>
