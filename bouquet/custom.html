@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Custom Bouquets | Glorious Gifts</title>
+
+<meta name="description" content="Create your own custom bouquet with your favorite chocolates, flowers, and gifts.">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Glorious Gifts">
+<meta property="og:title" content="Custom Bouquets | Glorious Gifts">
+<meta property="og:description" content="Design your own beautiful bouquet with Glorious Gifts.">
+<meta property="og:url" content="https://webytics.github.io/glorious/bouquet/custom.html">
+<meta property="og:image" content="https://webytics.github.io/glorious/images/t6.jpg">
+
+<style>
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+    background: #FBF6FF;
+    color: #2B1740;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.c {
+    max-width: 460px;
+    width: 100%;
+    background: #fff;
+    border-radius: 20px;
+    padding: 14px 14px 24px;
+    box-shadow: 0 20px 50px -20px rgba(76,29,120,.4);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    display: block;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 18px 10px 8px;
+}
+
+p {
+    margin: 0 14px 20px;
+    color: #5a4a6b;
+    line-height: 1.5;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin: 14px 8px 6px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+input, select, textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #ddd2e8;
+    border-radius: 10px;
+    font: inherit;
+    color: #2B1740;
+    background: #fff;
+}
+
+textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+.b {
+    display: inline-block;
+    background: #25D366;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 13px 26px;
+    border-radius: 999px;
+    border: 0;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.s {
+    display: block;
+    margin-top: 16px;
+    color: #7C3AED;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="c">
+
+<img src="../images/t6.jpg" alt="Custom chocolate and flower bouquet">
+
+<h1>Create Your Custom Bouquet</h1>
+
+<p>
+Make your bouquet special! Choose your favorite chocolates,
+flowers, and wrapping, and we will help create a beautiful
+bouquet just for you.
+</p>
+
+<form id="customForm">
+
+<label for="name">Your Name</label>
+<input type="text" id="name" placeholder="Enter your name">
+
+<label for="chocolate">Chocolates</label>
+<select id="chocolate">
+    <option value="">Choose chocolates</option>
+    <option>Dairy Milk</option>
+    <option>KitKat</option>
+    <option>Ferrero Rocher</option>
+    <option>Snickers</option>
+    <option>Mix of chocolates</option>
+    <option>Other chocolates</option>
+</select>
+
+<label for="flowers">Flowers</label>
+<select id="flowers">
+    <option value="">Choose flowers</option>
+    <option>Red Roses</option>
+    <option>White Roses</option>
+    <option>Pink Roses</option>
+    <option>Mixed Flowers</option>
+    <option>No Flowers</option>
+</select>
+
+<label for="size">Bouquet Size</label>
+<select id="size">
+    <option value="">Choose size</option>
+    <option>Small</option>
+    <option>Medium</option>
+    <option>Large</option>
+    <option>Premium</option>
+</select>
+
+<label for="budget">Your Budget (PKR)</label>
+<input type="number" id="budget" placeholder="Enter your budget">
+
+<label for="details">Additional Details</label>
+<textarea id="details" placeholder="Tell us about your dream bouquet, wrapping, colors, or special message..."></textarea>
+
+<button class="b" type="submit">
+Send Custom Bouquet Request
+</button>
+
+</form>
+
+<a class="s" href="../">See all bouquets</a>
+
+</div>
+
+<script>
+document.getElementById("customForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    var name = document.getElementById("name").value;
+    var chocolate = document.getElementById("chocolate").value;
+    var flowers = document.getElementById("flowers").value;
+    var size = document.getElementById("size").value;
+    var budget = document.getElementById("budget").value;
+    var details = document.getElementById("details").value;
+
+    var message =
+        "Hi Glorious Gifts! I want to create a custom bouquet.\n\n" +
+        "Name: " + name + "\n" +
+        "Chocolates: " + chocolate + "\n" +
+        "Flowers: " + flowers + "\n" +
+        "Size: " + size + "\n" +
+        "Budget: PKR " + budget + "\n" +
+        "Additional Details: " + details + "\n\n" +
+        "Please share the price and details.";
+
+    var whatsapp =
+        "https://wa.me/923006031314?text=" +
+        encodeURIComponent(message);
+
+    window.open(whatsapp, "_blank");
+});
+</script>
+
+</body>
+</html>
