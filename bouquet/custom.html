@@ -2,202 +2,348 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Bouquet | Glorious Gifts</title>
 
-<title>Custom Bouquets | Glorious Gifts</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-<meta name="description" content="Create your own custom bouquet with your favorite chocolates, flowers, and gifts.">
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff7f8;
+      color: #333;
+    }
 
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Glorious Gifts">
-<meta property="og:title" content="Custom Bouquets | Glorious Gifts">
-<meta property="og:description" content="Design your own beautiful bouquet with Glorious Gifts.">
-<meta property="og:url" content="https://webytics.github.io/glorious/bouquet/custom.html">
-<meta property="og:image" content="https://webytics.github.io/glorious/images/t6.jpg">
+    header {
+      background: #8f2346;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+    }
 
-<style>
-body {
-    margin: 0;
-    font-family: system-ui, -apple-system, Segoe UI, sans-serif;
-    background: #FBF6FF;
-    color: #2B1740;
-    display: grid;
-    place-items: center;
-    min-height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
-}
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
 
-.c {
-    max-width: 460px;
-    width: 100%;
-    background: #fff;
-    border-radius: 20px;
-    padding: 14px 14px 24px;
-    box-shadow: 0 20px 50px -20px rgba(76,29,120,.4);
-    text-align: center;
-    box-sizing: border-box;
-}
+    header p {
+      margin: 8px 0 0;
+    }
 
-img {
-    width: 100%;
-    height: auto;
-    border-radius: 14px;
-    display: block;
-}
+    .container {
+      max-width: 650px;
+      margin: 30px auto;
+      padding: 25px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    }
 
-h1 {
-    font-size: 24px;
-    margin: 18px 10px 8px;
-}
+    .container h2 {
+      text-align: center;
+      color: #8f2346;
+      margin-top: 0;
+    }
 
-p {
-    margin: 0 14px 20px;
-    color: #5a4a6b;
-    line-height: 1.5;
-}
+    .intro {
+      text-align: center;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
 
-label {
-    display: block;
-    text-align: left;
-    margin: 14px 8px 6px;
-    font-weight: 600;
-    font-size: 14px;
-}
+    label {
+      display: block;
+      margin: 16px 0 7px;
+      font-weight: bold;
+    }
 
-input, select, textarea {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 12px;
-    border: 1px solid #ddd2e8;
-    border-radius: 10px;
-    font: inherit;
-    color: #2B1740;
-    background: #fff;
-}
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 15px;
+      background: #fff;
+    }
 
-textarea {
-    min-height: 90px;
-    resize: vertical;
-}
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #8f2346;
+    }
 
-.b {
-    display: inline-block;
-    background: #25D366;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    padding: 13px 26px;
-    border-radius: 999px;
-    border: 0;
-    cursor: pointer;
-    margin-top: 20px;
-    font-size: 15px;
-}
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
 
-.s {
-    display: block;
-    margin-top: 16px;
-    color: #7C3AED;
-    font-size: 14px;
-}
-</style>
+    .other-box {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 25px;
+      padding: 15px;
+      background: #8f2346;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background: #701a36;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      color: #8f2346;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px 12px;
+        padding: 20px;
+      }
+
+      header h1 {
+        font-size: 25px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="c">
+  <header>
+    <h1>Glorious Gifts</h1>
+    <p>Create a bouquet made just for someone special</p>
+  </header>
 
-<img src="../images/t6.jpg" alt="Custom chocolate and flower bouquet">
+  <div class="container">
+    <h2>Plan Your Custom Bouquet</h2>
 
-<h1>Create Your Custom Bouquet</h1>
+    <p class="intro">
+      Choose your favourite chocolates, flowers and extra products.
+      If you want something different, select "Other" and write its name.
+    </p>
 
-<p>
-Make your bouquet special! Choose your favorite chocolates,
-flowers, and wrapping, and we will help create a beautiful
-bouquet just for you.
-</p>
+    <form id="customBouquetForm">
 
-<form id="customForm">
+      <label for="customerName">Your Name *</label>
+      <input
+        type="text"
+        id="customerName"
+        placeholder="Enter your name"
+        required
+      >
 
-<label for="name">Your Name</label>
-<input type="text" id="name" placeholder="Enter your name">
+      <label for="chocolate">Choose Chocolates *</label>
+      <select id="chocolate" required>
+        <option value="">Select chocolate</option>
+        <option>Dairy Milk</option>
+        <option>KitKat</option>
+        <option>Ferrero Rocher</option>
+        <option>Snickers</option>
+        <option>Mix of Chocolates</option>
+        <option value="other">Other Chocolate</option>
+      </select>
 
-<label for="chocolate">Chocolates</label>
-<select id="chocolate">
-    <option value="">Choose chocolates</option>
-    <option>Dairy Milk</option>
-    <option>KitKat</option>
-    <option>Ferrero Rocher</option>
-    <option>Snickers</option>
-    <option>Mix of chocolates</option>
-    <option>Other chocolates</option>
-</select>
+      <div class="other-box" id="otherChocolateBox">
+        <label for="otherChocolateName">Enter Chocolate Name *</label>
+        <input
+          type="text"
+          id="otherChocolateName"
+          placeholder="e.g. Bounty, Galaxy, Lindt"
+        >
+      </div>
 
-<label for="flowers">Flowers</label>
-<select id="flowers">
-    <option value="">Choose flowers</option>
-    <option>Red Roses</option>
-    <option>White Roses</option>
-    <option>Pink Roses</option>
-    <option>Mixed Flowers</option>
-    <option>No Flowers</option>
-</select>
+      <label for="flower">Choose Flowers *</label>
+      <select id="flower" required>
+        <option value="">Select flowers</option>
+        <option>Red Roses</option>
+        <option>White Roses</option>
+        <option>Pink Roses</option>
+        <option>Mixed Flowers</option>
+        <option>No Flowers</option>
+        <option value="other">Other Flowers</option>
+      </select>
 
-<label for="size">Bouquet Size</label>
-<select id="size">
-    <option value="">Choose size</option>
-    <option>Small</option>
-    <option>Medium</option>
-    <option>Large</option>
-    <option>Premium</option>
-</select>
+      <div class="other-box" id="otherFlowerBox">
+        <label for="otherFlowerName">Enter Flower Name *</label>
+        <input
+          type="text"
+          id="otherFlowerName"
+          placeholder="e.g. Tulips, Sunflowers, Lilies"
+        >
+      </div>
 
-<label for="budget">Your Budget (PKR)</label>
-<input type="number" id="budget" placeholder="Enter your budget">
+      <label for="extraProduct">Would You Like to Add Another Product?</label>
+      <select id="extraProduct">
+        <option value="No extra product">No extra product</option>
+        <option value="other">Other Product</option>
+      </select>
 
-<label for="details">Additional Details</label>
-<textarea id="details" placeholder="Tell us about your dream bouquet, wrapping, colors, or special message..."></textarea>
+      <div class="other-box" id="otherProductBox">
+        <label for="otherProductName">Enter Product Name *</label>
+        <input
+          type="text"
+          id="otherProductName"
+          placeholder="e.g. Teddy bear, perfume, jewellery"
+        >
+      </div>
 
-<button class="b" type="submit">
-Send Custom Bouquet Request
-</button>
+      <label for="size">Bouquet Size *</label>
+      <select id="size" required>
+        <option value="">Select bouquet size</option>
+        <option>Small</option>
+        <option>Medium</option>
+        <option>Large</option>
+        <option>Premium</option>
+      </select>
 
-</form>
+      <label for="budget">Your Budget (PKR) *</label>
+      <input
+        type="number"
+        id="budget"
+        min="1"
+        placeholder="Enter your budget in PKR"
+        required
+      >
 
-<a class="s" href="../">See all bouquets</a>
+      <label for="details">Additional Details</label>
+      <textarea
+        id="details"
+        placeholder="Tell us about colours, wrapping, message card or any special request..."
+      ></textarea>
 
-</div>
+      <button type="submit" class="submit-btn">
+        Send Custom Order on WhatsApp
+      </button>
 
-<script>
-document.getElementById("customForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+    </form>
 
-    var name = document.getElementById("name").value;
-    var chocolate = document.getElementById("chocolate").value;
-    var flowers = document.getElementById("flowers").value;
-    var size = document.getElementById("size").value;
-    var budget = document.getElementById("budget").value;
-    var details = document.getElementById("details").value;
+    <a href="../" class="back-link">← Back to Glorious Gifts</a>
+  </div>
 
-    var message =
-        "Hi Glorious Gifts! I want to create a custom bouquet.\n\n" +
-        "Name: " + name + "\n" +
-        "Chocolates: " + chocolate + "\n" +
-        "Flowers: " + flowers + "\n" +
-        "Size: " + size + "\n" +
-        "Budget: PKR " + budget + "\n" +
-        "Additional Details: " + details + "\n\n" +
-        "Please share the price and details.";
+  <script>
+    const chocolate = document.getElementById("chocolate");
+    const flower = document.getElementById("flower");
+    const extraProduct = document.getElementById("extraProduct");
 
-    var whatsapp =
-        "https://wa.me/923006031314?text=" +
-        encodeURIComponent(message);
+    const otherChocolateBox =
+      document.getElementById("otherChocolateBox");
 
-    window.open(whatsapp, "_blank");
-});
-</script>
+    const otherFlowerBox =
+      document.getElementById("otherFlowerBox");
+
+    const otherProductBox =
+      document.getElementById("otherProductBox");
+
+    const otherChocolateName =
+      document.getElementById("otherChocolateName");
+
+    const otherFlowerName =
+      document.getElementById("otherFlowerName");
+
+    const otherProductName =
+      document.getElementById("otherProductName");
+
+    function showOtherOptions() {
+      const chocolateIsOther = chocolate.value === "other";
+      const flowerIsOther = flower.value === "other";
+      const productIsOther = extraProduct.value === "other";
+
+      otherChocolateBox.style.display =
+        chocolateIsOther ? "block" : "none";
+
+      otherFlowerBox.style.display =
+        flowerIsOther ? "block" : "none";
+
+      otherProductBox.style.display =
+        productIsOther ? "block" : "none";
+
+      otherChocolateName.required = chocolateIsOther;
+      otherFlowerName.required = flowerIsOther;
+      otherProductName.required = productIsOther;
+    }
+
+    chocolate.addEventListener("change", showOtherOptions);
+    flower.addEventListener("change", showOtherOptions);
+    extraProduct.addEventListener("change", showOtherOptions);
+
+    document
+      .getElementById("customBouquetForm")
+      .addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const name =
+          document.getElementById("customerName").value.trim();
+
+        const chocolateChoice =
+          chocolate.value === "other"
+            ? otherChocolateName.value.trim()
+            : chocolate.value;
+
+        const flowerChoice =
+          flower.value === "other"
+            ? otherFlowerName.value.trim()
+            : flower.value;
+
+        const productChoice =
+          extraProduct.value === "other"
+            ? otherProductName.value.trim()
+            : extraProduct.value;
+
+        const size =
+          document.getElementById("size").value;
+
+        const budget =
+          document.getElementById("budget").value;
+
+        const details =
+          document.getElementById("details").value.trim();
+
+        const message =
+`Hi Glorious Gifts! I want to create a custom bouquet.
+
+Name: ${name}
+Chocolates: ${chocolateChoice}
+Flowers: ${flowerChoice}
+Extra Product: ${productChoice}
+Bouquet Size: ${size}
+Budget: PKR ${budget}
+Additional Details: ${details || "None"}
+
+Please share the price and details. Thank you!`;
+
+        const whatsappNumber = "923006031314";
+
+        const whatsappURL =
+          "https://wa.me/" +
+          whatsappNumber +
+          "?text=" +
+          encodeURIComponent(message);
+
+        window.open(whatsappURL, "_blank");
+      });
+  </script>
 
 </body>
 </html>
