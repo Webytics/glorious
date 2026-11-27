@@ -266,7 +266,7 @@ function toast(t){var d=document.createElement('div');d.textContent=t;d.style.cs
 function copyImg(img){return new Promise(function(res){try{var c=document.createElement('canvas');c.width=img.naturalWidth;c.height=img.naturalHeight;c.getContext('2d').drawImage(img,0,0);c.toBlob(function(b){try{navigator.clipboard.write([new ClipboardItem({'image/png':b})]).then(function(){res(true)},function(){res(false)})}catch(e){res(false)}},'image/png')}catch(e){res(false)}})}
 var SITE='https://webytics.github.io/glorious/';/* optional: paste your live site address here, e.g. https://yourname.github.io/glorious/ */
 function photoUrl(k){var base=SITE?SITE.replace(/\/?$/,'/'):location.href;return new URL('b/'+k+'.html',base).href}
-function withLink(k,msg){return (SITE||web)?msg+' See the bouquet: '+photoUrl(k):msg}
+function withLink(k,msg){return (SITE||web)?msg+'\n\n'+photoUrl(k):msg}
 document.querySelectorAll('.card:not(.custom)').forEach(function(c){
  var img=c.querySelector('.ph img'),h=c.querySelector('h3');if(!img||!h)return;
  c.addEventListener('click',function(e){
